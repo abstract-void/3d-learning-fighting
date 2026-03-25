@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 19429867471451519}
   - component: {fileID: 6294437285019488773}
   - component: {fileID: 4657725552351770582}
+  - component: {fileID: -1454385854628435668}
   - component: {fileID: 1588236433121726998}
   - component: {fileID: 6078373069615466286}
   - component: {fileID: 8521097398145961142}
@@ -64,6 +65,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 40
+--- !u!114 &-1454385854628435668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567964930791041659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c273f4ffeb9da8940bdec9e42ddbd89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGroundCheck
+  rayLengthFactor: 0.1
 --- !u!33 &1588236433121726998
 MeshFilter:
   m_ObjectHideFlags: 0
