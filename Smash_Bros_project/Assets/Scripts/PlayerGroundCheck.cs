@@ -23,7 +23,5 @@ public class PlayerGroundCheck : MonoBehaviour
         Physics.Raycast(col.bounds.center, Vector3.down, out RaycastHit hitInfo, rayLength);
 
 		IsGrounded = hitInfo.collider != null;
-
-		Debug.Log(IsGrounded);
 	}
 }

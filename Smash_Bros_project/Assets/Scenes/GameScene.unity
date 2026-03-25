@@ -391,6 +391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8848017815744114806, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
+      propertyPath: jumpImpulse
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 19429867471451519, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6
@@ -437,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657725552351770582, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: moveSpeed
-      value: 60
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6294437285019488773, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: playerId
@@ -617,6 +621,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8848017815744114806, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
+      propertyPath: jumpImpulse
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 19429867471451519, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6
@@ -663,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4657725552351770582, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: moveSpeed
-      value: 80
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

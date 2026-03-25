@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerJump))]
 public class PlayerFighterController : MonoBehaviour
 {
 	// Tarea: controlador principal común (2.5D): lee input “directo” (por PlayerId), gestiona estados (en suelo/en aire), y coordina movimiento/combate.
@@ -11,6 +12,8 @@ public class PlayerFighterController : MonoBehaviour
 
 	private InputActionMap actionMap;
 
+	private PlayerJump playerJump;
+
 	public string PlayerId => playerId;
 
 	public Vector2 Direction { get; private set; }
@@ -18,6 +21,7 @@ public class PlayerFighterController : MonoBehaviour
 	private void Awake()
 	{
 		actionMap = inputActions.FindActionMap(playerId);
+		playerJump = GetComponent<PlayerJump>();
 	}
 
 	private void OnEnable()
@@ -26,6 +30,7 @@ public class PlayerFighterController : MonoBehaviour
 
 		actionMap.FindAction("Move").performed += Move;
 		actionMap.FindAction("Move").canceled += StopMoving;
+		actionMap.FindAction("Jump").performed += Jump;
 	}
 
 	private void OnDisable()
@@ -34,6 +39,7 @@ public class PlayerFighterController : MonoBehaviour
 
 		actionMap.FindAction("Move").performed -= Move;
 		actionMap.FindAction("Move").canceled -= StopMoving;
+		actionMap.FindAction("Jump").performed -= Jump;
 	}
 
 	private void Move(InputAction.CallbackContext context)
@@ -44,5 +50,10 @@ public class PlayerFighterController : MonoBehaviour
 	private void StopMoving(InputAction.CallbackContext context)
 	{
 		Direction = new Vector2();
+	}
+
+	private void Jump(InputAction.CallbackContext context)
+	{
+		playerJump.Jump();
 	}
 }
