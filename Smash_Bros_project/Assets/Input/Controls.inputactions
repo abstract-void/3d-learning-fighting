@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Launch Neutral Attack",
+                    "type": "Button",
+                    "id": "b2dcafa3-4b2f-4924-89c3-c69cef98ab3a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -62,11 +71,22 @@
                 {
                     "name": "",
                     "id": "fd4f0caa-a0e8-454f-961a-e1d761552846",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e890e5bd-fb78-490b-92db-438eaa181b2c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch Neutral Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -89,6 +109,15 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "3a3317b1-ce6a-4dbd-9341-0c60ff05ed09",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Launch Neutral Attack",
+                    "type": "Button",
+                    "id": "177709dc-b9f2-422b-89b7-e10206a14d40",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -132,11 +161,22 @@
                 {
                     "name": "",
                     "id": "e80483e3-b8b1-4eb3-a757-7aaa82829dee",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6410614-682b-4107-b813-562b09f0a8e1",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch Neutral Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

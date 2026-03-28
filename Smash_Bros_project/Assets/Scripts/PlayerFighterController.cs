@@ -13,6 +13,9 @@ public class PlayerFighterController : MonoBehaviour
 	private InputActionMap actionMap;
 
 	private PlayerJump playerJump;
+	private FighterCombatCore fighterCombatCore;
+
+	private bool isAttacking = false;
 
 	public string PlayerId => playerId;
 
@@ -21,7 +24,11 @@ public class PlayerFighterController : MonoBehaviour
 	private void Awake()
 	{
 		actionMap = inputActions.FindActionMap(playerId);
+
 		playerJump = GetComponent<PlayerJump>();
+		fighterCombatCore = GetComponent<FighterCombatCore>();
+
+		fighterCombatCore.AttackPerformed += StopAttacking;
 	}
 
 	private void OnEnable()
@@ -31,6 +38,7 @@ public class PlayerFighterController : MonoBehaviour
 		actionMap.FindAction("Move").performed += Move;
 		actionMap.FindAction("Move").canceled += StopMoving;
 		actionMap.FindAction("Jump").performed += Jump;
+		actionMap.FindAction("Launch Neutral Attack").performed += LaunchNeutralAttack;
 	}
 
 	private void OnDisable()
@@ -40,20 +48,55 @@ public class PlayerFighterController : MonoBehaviour
 		actionMap.FindAction("Move").performed -= Move;
 		actionMap.FindAction("Move").canceled -= StopMoving;
 		actionMap.FindAction("Jump").performed -= Jump;
+		actionMap.FindAction("Launch Neutral Attack").performed -= LaunchNeutralAttack;
 	}
 
 	private void Move(InputAction.CallbackContext context)
 	{
+		if (isAttacking)
+		{
+			return;
+		}
+
 		Direction = context.ReadValue<Vector2>();
 	}
 
 	private void StopMoving(InputAction.CallbackContext context)
 	{
+		if (isAttacking)
+		{
+			return;
+		}
+
 		Direction = new Vector2();
 	}
 
 	private void Jump(InputAction.CallbackContext context)
 	{
+		if (isAttacking)
+		{
+			return;
+		}
+
 		playerJump.Jump();
+	}
+
+	private void LaunchNeutralAttack(InputAction.CallbackContext context)
+	{
+		if (isAttacking)
+		{
+			return;
+		}
+
+		Direction = Vector2.zero;
+
+		fighterCombatCore.LaunchAttack();
+
+		isAttacking = true;
+	}
+
+	private void StopAttacking()
+	{
+		isAttacking = false;
 	}
 }
