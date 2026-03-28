@@ -90,9 +90,7 @@ public class PlayerFighterController : MonoBehaviour
 
 		Direction = Vector2.zero;
 
-		fighterCombatCore.LaunchAttack();
-
-		isAttacking = true;
+		isAttacking = fighterCombatCore.LaunchAttack();
 	}
 
 	private void StopAttacking()
