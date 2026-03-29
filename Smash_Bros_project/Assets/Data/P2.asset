@@ -12,17 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc063f24ed57d5409b32922441e8e61, type: 3}
   m_Name: P2
   m_EditorClassIdentifier: Assembly-CSharp::FighterStats
-  <Speed>k__BackingField: 0
-  <InvincibilityTime>k__BackingField: 0
   <GroundAttackStartupTime>k__BackingField: 0.3
   <GroundAttackPerformTime>k__BackingField: 0.3
   <GroundAttackRecoveryTime>k__BackingField: 0.3
-  <GroundAttackBaseDamage>k__BackingField: 10
-  <GroundAttackKnockback>k__BackingField: 30
   <GroundAttackCooldown>k__BackingField: 0.6
+  <GroundAttackBaseDamage>k__BackingField: 10
+  <GroundAttackKnockback>k__BackingField: 25
   <AirAttackStartupTime>k__BackingField: 0.2
   <AirAttackPerformTime>k__BackingField: 0.3
   <AirAttackRecoveryTime>k__BackingField: 0.2
+  <AirAttackCooldown>k__BackingField: 0.3
   <AirAttackBaseDamage>k__BackingField: 9
   <AirAttackKnockback>k__BackingField: 15
-  <AirAttackCooldown>k__BackingField: 0.3
+  <SpecialAttackStartupTime>k__BackingField: 0.1
+  <SpecialAttackPerformTime>k__BackingField: 0.2
+  <SpecialAttackRecoveryTime>k__BackingField: 0.1
+  <SpecialAttackCooldown>k__BackingField: 1
+  <SpecialAttackBaseDamage>k__BackingField: 15
+  <SpecialAttackKnockback>k__BackingField: 30

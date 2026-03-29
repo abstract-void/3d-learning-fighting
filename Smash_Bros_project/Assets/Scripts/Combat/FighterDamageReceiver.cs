@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(FighterPercentKnockback))]
 public class FighterDamageReceiver : MonoBehaviour
 {
     // Tarea: recibe golpes/proyectiles y aplica “porcentaje + knockback”; punto único de “me han pegado”.
@@ -19,6 +20,11 @@ public class FighterDamageReceiver : MonoBehaviour
 		{
 			if (collider.gameObject.TryGetComponent(out HitboxMelee hitbox))
 			{
+				if (hitbox.IsFighterSelf(transform))
+				{
+					return;
+				}
+
 				Vector2 knockbackDirection = hitbox.GetKnockbackDirection(collider.transform.position);
 
 				damageReceived += hitbox.Damage;

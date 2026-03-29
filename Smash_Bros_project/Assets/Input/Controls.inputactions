@@ -32,6 +32,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Launch Special Attack",
+                    "type": "Button",
+                    "id": "613a7faa-0ff5-4c4b-815f-a33163b59065",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -89,6 +98,17 @@
                     "action": "Launch Neutral Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1df412d9-016b-4e88-b315-b41b99fd5d54",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch Special Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -118,6 +138,15 @@
                     "name": "Launch Neutral Attack",
                     "type": "Button",
                     "id": "177709dc-b9f2-422b-89b7-e10206a14d40",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Launch Special Attack",
+                    "type": "Button",
+                    "id": "a940bf12-56fa-4945-a6a6-700119312650",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -177,6 +206,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Launch Neutral Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fe9a45b-f8a1-4011-a234-a185c2275213",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Launch Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

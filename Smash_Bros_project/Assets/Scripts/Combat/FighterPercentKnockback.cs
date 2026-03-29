@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class FighterPercentKnockback : MonoBehaviour
 {
     // Tarea: convierte daño en incremento de porcentaje y calcula fuerza de empuje según porcentaje actual.

@@ -4,8 +4,9 @@ public class HitboxMelee : MonoBehaviour
 {
     // Tarea: hitbox melee (trigger) que aplica un paquete de daño y dirección de empuje al rival.
 	// Habla con: FighterDamageReceiver del objetivo y define el “ataque normal” sin animaciones.
-	[SerializeField] private Transform fighterTransform;
 	[SerializeField] private Vector2 knockbackRatio;
+
+	private Transform fighterTransform;
 
 	public float Damage { get; private set; }
 
@@ -16,10 +17,12 @@ public class HitboxMelee : MonoBehaviour
 		knockbackRatio.Normalize();
 	}
 
-	public void Initialize(float damage, float knockback)
+	public void Initialize(Transform fighterTransform, float damage, float knockback)
 	{
 		Damage = damage;
 		Knockback = knockback;
+
+		this.fighterTransform = fighterTransform;
 	}
 
 	public void Enable()
@@ -31,6 +34,8 @@ public class HitboxMelee : MonoBehaviour
 	{
 		gameObject.SetActive(false);
 	}
+
+	public bool IsFighterSelf(Transform fighterTransform) => this.fighterTransform == fighterTransform;
 
 	public Vector2 GetKnockbackDirection(Vector3 opponentPosition)
 	{

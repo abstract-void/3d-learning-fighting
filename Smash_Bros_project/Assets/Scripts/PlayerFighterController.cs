@@ -1,3 +1,5 @@
+using System;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +18,8 @@ public class PlayerFighterController : MonoBehaviour
 	private FighterCombatCore fighterCombatCore;
 
 	private bool isAttacking = false;
+
+	public event Action SpecialAttackLaunched;
 
 	public string PlayerId => playerId;
 
@@ -39,6 +43,7 @@ public class PlayerFighterController : MonoBehaviour
 		actionMap.FindAction("Move").canceled += StopMoving;
 		actionMap.FindAction("Jump").performed += Jump;
 		actionMap.FindAction("Launch Neutral Attack").performed += LaunchNeutralAttack;
+		actionMap.FindAction("Launch Special Attack").performed += LaunchSpecialAttack;
 	}
 
 	private void OnDisable()
@@ -49,6 +54,17 @@ public class PlayerFighterController : MonoBehaviour
 		actionMap.FindAction("Move").canceled -= StopMoving;
 		actionMap.FindAction("Jump").performed -= Jump;
 		actionMap.FindAction("Launch Neutral Attack").performed -= LaunchNeutralAttack;
+		actionMap.FindAction("Launch Special Attack").performed -= LaunchSpecialAttack;
+	}
+
+	public void StartAttacking()
+	{
+		isAttacking = true;
+	}
+
+	public void StopAttacking()
+	{
+		isAttacking = false;
 	}
 
 	private void Move(InputAction.CallbackContext context)
@@ -93,8 +109,15 @@ public class PlayerFighterController : MonoBehaviour
 		isAttacking = fighterCombatCore.LaunchAttack();
 	}
 
-	private void StopAttacking()
+	private void LaunchSpecialAttack(InputAction.CallbackContext context)
 	{
-		isAttacking = false;
+		if (isAttacking)
+		{
+			return;
+		}
+
+		Direction = Vector2.zero;
+
+		SpecialAttackLaunched?.Invoke();
 	}
 }

@@ -25,8 +25,8 @@ public class FighterCombatCore : MonoBehaviour
 	{
 		groundChecker = GetComponent<PlayerGroundCheck>();
 
-		groundHitbox.Initialize(fighterStats.GroundAttackBaseDamage, fighterStats.GroundAttackKnockback);
-		airHitbox.Initialize(fighterStats.AirAttackBaseDamage, fighterStats.AirAttackKnockback);
+		groundHitbox.Initialize(transform, fighterStats.GroundAttackBaseDamage, fighterStats.GroundAttackKnockback);
+		airHitbox.Initialize(transform, fighterStats.AirAttackBaseDamage, fighterStats.AirAttackKnockback);
 	}
 
 	public bool LaunchAttack()
