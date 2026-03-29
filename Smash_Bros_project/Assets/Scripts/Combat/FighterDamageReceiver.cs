@@ -4,4 +4,29 @@ public class FighterDamageReceiver : MonoBehaviour
 {
     // Tarea: recibe golpes/proyectiles y aplica “porcentaje + knockback”; punto único de “me han pegado”.
 	// Habla con: FighterPercentKnockback y FighterLifeSystem y notifica al HUD cuando cambia el porcentaje.
+	private FighterPercentKnockback percentKnockback;
+
+	private float damageReceived;
+
+	private void Awake()
+	{
+		percentKnockback = GetComponent<FighterPercentKnockback>();
+	}
+
+	private void OnTriggerEnter(Collider collider)
+	{
+		if (collider.gameObject.layer == LayerMask.NameToLayer("Hitbox"))
+		{
+			if (collider.gameObject.TryGetComponent(out HitboxMelee hitbox))
+			{
+				Vector2 knockbackDirection = hitbox.GetKnockbackDirection(collider.transform.position);
+
+				damageReceived += hitbox.Damage;
+
+				percentKnockback.ApplyKnockback(knockbackDirection, damageReceived * hitbox.Knockback);
+
+				Debug.Log(damageReceived);
+			}
+		}
+	}
 }

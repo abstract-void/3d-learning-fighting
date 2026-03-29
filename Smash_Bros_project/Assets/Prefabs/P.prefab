@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4657725552351770582}
   - component: {fileID: -8848017815744114806}
   - component: {fileID: 8187136155726812728}
+  - component: {fileID: -3284471494211649793}
+  - component: {fileID: 7739800252856432450}
   - component: {fileID: -1454385854628435668}
   - component: {fileID: 1588236433121726998}
   - component: {fileID: 6078373069615466286}
@@ -69,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 40
+  rotationDamp: 0
 --- !u!114 &-8848017815744114806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +102,31 @@ MonoBehaviour:
   fighterStats: {fileID: 11400000, guid: 6f1e5556c0d3b4a4d9ab572ca9a48696, type: 2}
   groundHitbox: {fileID: 2097919598382697948}
   airHitbox: {fileID: 2596455720709062153}
+--- !u!114 &-3284471494211649793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567964930791041659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502ac585dc272184889e51cc41f9b7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FighterDamageReceiver
+--- !u!114 &7739800252856432450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567964930791041659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c277ed2c8e3660f4ca29e382f4d91208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FighterPercentKnockback
+  knockbackMultiplier: 0.03
 --- !u!114 &-1454385854628435668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +255,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19429867471451519}
     m_Modifications:
+    - target: {fileID: -3383468023682183737, guid: 580d567b95e0ebc4eb596b612d97ee0d, type: 3}
+      propertyPath: fighterTransform
+      value: 
+      objectReference: {fileID: 19429867471451519}
     - target: {fileID: 706825063848890963, guid: 580d567b95e0ebc4eb596b612d97ee0d, type: 3}
       propertyPath: m_Name
       value: Ground Attack Hitbox
@@ -304,6 +336,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19429867471451519}
     m_Modifications:
+    - target: {fileID: -3383468023682183737, guid: 580d567b95e0ebc4eb596b612d97ee0d, type: 3}
+      propertyPath: fighterTransform
+      value: 
+      objectReference: {fileID: 19429867471451519}
     - target: {fileID: 706825063848890963, guid: 580d567b95e0ebc4eb596b612d97ee0d, type: 3}
       propertyPath: m_Name
       value: Air Attack Hitbox

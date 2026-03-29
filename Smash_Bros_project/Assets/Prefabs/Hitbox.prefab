@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e184fc5d0678349adb7f5fe3fdc6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitboxMelee
+  fighterTransform: {fileID: 0}
+  knockbackRatio: {x: 0.25, y: 0.75}
 --- !u!65 &8991609322545553324
 BoxCollider:
   m_ObjectHideFlags: 0
