@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerFighterController))]
@@ -16,8 +14,6 @@ public class BlasterSpecial : MonoBehaviour
 	private BlasterProjectile blasterProjectile;
 
 	private Coroutine attackCoroutine;
-
-	public event Action AttackPerformed;
 
 	private void Awake()
 	{

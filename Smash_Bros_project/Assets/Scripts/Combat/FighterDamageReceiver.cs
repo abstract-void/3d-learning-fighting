@@ -18,21 +18,26 @@ public class FighterDamageReceiver : MonoBehaviour
 	{
 		if (collider.gameObject.layer == LayerMask.NameToLayer("Hitbox"))
 		{
-			if (collider.gameObject.TryGetComponent(out HitboxMelee hitbox))
+			ApplyDamage(collider);
+		}
+	}
+
+	public void ApplyDamage(Collider collider)
+	{
+		if (collider.gameObject.TryGetComponent(out HitboxMelee hitbox))
+		{
+			if (hitbox.IsFighterSelf(transform))
 			{
-				if (hitbox.IsFighterSelf(transform))
-				{
-					return;
-				}
-
-				Vector2 knockbackDirection = hitbox.GetKnockbackDirection(collider.transform.position);
-
-				damageReceived += hitbox.Damage;
-
-				percentKnockback.ApplyKnockback(knockbackDirection, damageReceived * hitbox.Knockback);
-
-				Debug.Log(damageReceived);
+				return;
 			}
+			
+			Vector2 knockbackDirection = hitbox.GetKnockbackDirection(collider.transform.position);
+
+			damageReceived += hitbox.Damage;
+
+			percentKnockback.ApplyKnockback(knockbackDirection, damageReceived * hitbox.Knockback);
+
+			Debug.Log(damageReceived);
 		}
 	}
 }
