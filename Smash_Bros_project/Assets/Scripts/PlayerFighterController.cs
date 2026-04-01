@@ -10,7 +10,7 @@ public class PlayerFighterController : MonoBehaviour
 	// Habla con: PlayerMovement2_5D, PlayerJump, FighterCombatCore, FighterDamageReceiver y expone referencias comunes para HUD/cámara.
 	[SerializeField] private InputActionAsset inputActions;
 
-	[SerializeField] private string playerId;
+	private string playerId;
 
 	private InputActionMap actionMap;
 
@@ -20,8 +20,6 @@ public class PlayerFighterController : MonoBehaviour
 	private bool isAttacking = false;
 
 	public event Action SpecialAttackLaunched;
-
-	public string PlayerId => playerId;
 
 	public Vector2 Direction { get; private set; }
 
@@ -55,6 +53,11 @@ public class PlayerFighterController : MonoBehaviour
 		actionMap.FindAction("Jump").performed -= Jump;
 		actionMap.FindAction("Launch Neutral Attack").performed -= LaunchNeutralAttack;
 		actionMap.FindAction("Launch Special Attack").performed -= LaunchSpecialAttack;
+	}
+
+	public void SetPlayerId(string playerId)
+	{
+		this.playerId = playerId;
 	}
 
 	public void StartAttacking()

@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &19429867471451519
 Transform:
   m_ObjectHideFlags: 0
@@ -58,7 +58,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFighterController
   inputActions: {fileID: -944628639613478452, guid: 18ad2149ef854d947a7c80f2154e2077, type: 3}
-  playerId: P1
 --- !u!114 &4657725552351770582
 MonoBehaviour:
   m_ObjectHideFlags: 0
