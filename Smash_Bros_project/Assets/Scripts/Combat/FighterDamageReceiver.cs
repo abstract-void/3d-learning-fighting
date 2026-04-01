@@ -9,6 +9,8 @@ public class FighterDamageReceiver : MonoBehaviour
 
 	private float damageReceived;
 
+	public bool IsInvicible { get; set; }
+
 	private void Awake()
 	{
 		percentKnockback = GetComponent<FighterPercentKnockback>();
@@ -26,7 +28,7 @@ public class FighterDamageReceiver : MonoBehaviour
 	{
 		if (collider.gameObject.TryGetComponent(out HitboxMelee hitbox))
 		{
-			if (hitbox.IsFighterSelf(transform))
+			if (hitbox.IsFighterSelf(transform) || IsInvicible == true)
 			{
 				return;
 			}
