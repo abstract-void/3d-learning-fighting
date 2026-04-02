@@ -29,8 +29,10 @@ public class MatchSetup : MonoBehaviour
 
 		GameObject fighterObj = Instantiate(fighterPrefab, position, rotation);
 		PlayerFighterController fighterController = fighterObj.GetComponent<PlayerFighterController>();
+		FighterLifeSystem fighterLifeSystem = fighterObj.GetComponent<FighterLifeSystem>();
 
 		fighterController.SetPlayerId(playerId);
+		fighterLifeSystem.Initialize(respawnPoints, GameState.Instance.TotalLives);
 
 		fighterObj.SetActive(true);
 

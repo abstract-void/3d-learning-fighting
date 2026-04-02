@@ -42,4 +42,9 @@ public class FighterDamageReceiver : MonoBehaviour
 			Debug.Log(damageReceived);
 		}
 	}
+
+	public void ResetDamage()
+	{
+		damageReceived = 0;
+	}
 }

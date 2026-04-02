@@ -41,6 +41,11 @@ public class PowerUpController : MonoBehaviour
 	{
 		if (type == "Invincibility")
 		{
+			if (damageReceiver.IsInvicible == true)
+			{
+				return;
+			}
+
 			damageReceiver.IsInvicible = true;
 		}
 

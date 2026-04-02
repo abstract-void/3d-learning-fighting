@@ -7,6 +7,8 @@ public class CameraMatchController : MonoBehaviour
 	[SerializeField] private MatchSetup matchSetup;
 	[SerializeField] private Vector3 basePosition;
 	[SerializeField] private Vector3 distanceMultiplier;
+	[SerializeField] private Vector3 maxPosition;
+	[SerializeField] private Vector3 minPosition;
 	[SerializeField] private float speed;
 
 	private GameObject[] fighters;
@@ -36,6 +38,10 @@ public class CameraMatchController : MonoBehaviour
 		float positionY = basePosition.y + meanPosition.y + maxFightersDistance * distanceMultiplier.y;
 		float positionZ = basePosition.z - maxFightersDistance * distanceMultiplier.z;
 
+		positionX = Mathf.Clamp(positionX, minPosition.x, maxPosition.x);
+		positionY = Mathf.Clamp(positionY, minPosition.y, maxPosition.y);
+		positionZ = Mathf.Clamp(positionZ, minPosition.z, maxPosition.z);
+
 		return new Vector3(positionX, positionY, positionZ);
 	}
 
@@ -43,12 +49,23 @@ public class CameraMatchController : MonoBehaviour
 	{
 		Vector3 addedPositions = Vector3.zero;
 
+		int totalFighters = 0;
+
 		for (int i = 0; i < fighters.Length; i++)
 		{
-			addedPositions += fighters[i].transform.position;
+			if (fighters[i].activeSelf == true)
+			{
+				addedPositions += fighters[i].transform.position;
+				totalFighters++;
+			}
 		}
 
-		return addedPositions / fighters.Length;
+		if (totalFighters == 0)
+		{
+			totalFighters = 1;
+		}
+
+		return addedPositions / totalFighters;
 	}
 
 	private float GetMaxFightersDistance()
@@ -68,11 +85,15 @@ public class CameraMatchController : MonoBehaviour
 				nextIndex = 0;
 			}
 
-			float distance = Vector3.Distance(fighters[i].transform.position, fighters[nextIndex].transform.position);
-
-			if (distance > maxDistance)
+			
+			if (fighters[i].activeSelf == true && fighters[nextIndex].activeSelf == true)
 			{
-				maxDistance = distance;
+				float distance = Vector3.Distance(fighters[i].transform.position, fighters[nextIndex].transform.position);
+
+				if (distance > maxDistance)
+				{
+					maxDistance = distance;
+				}
 			}
 		}
 

@@ -21,6 +21,8 @@ public class PlayerFighterController : MonoBehaviour
 
 	public event Action SpecialAttackLaunched;
 
+	public string PlayerId => playerId;
+
 	public Vector2 Direction { get; private set; }
 
 	private void Awake()
