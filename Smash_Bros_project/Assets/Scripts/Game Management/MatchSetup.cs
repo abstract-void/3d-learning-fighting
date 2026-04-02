@@ -6,13 +6,22 @@ public class MatchSetup : MonoBehaviour
 	// Habla con: GameState, PlayerFighterController y CameraMatchController, y asegura que HUD y cámara apuntan a los jugadores correctos.
 	[SerializeField] private RespawnPoints respawnPoints;
 
+	private GameObject[] fighters;
+
 	private void Awake()
 	{
-		InstantiateFighter(GameState.Instance.P1Prefab, "P1");
-		InstantiateFighter(GameState.Instance.P2Prefab, "P2");
+		fighters = new GameObject[2];
+
+		fighters[0] = InstantiateFighter(GameState.Instance.P1Prefab, "P1");
+		fighters[1] = InstantiateFighter(GameState.Instance.P2Prefab, "P2");
 	}
 
-	private void InstantiateFighter(GameObject fighterPrefab, string playerId)
+	public GameObject[] GetFighters()
+	{
+		return fighters;
+	}
+
+	private GameObject InstantiateFighter(GameObject fighterPrefab, string playerId)
 	{
 		Vector3 position = respawnPoints.GetPosition(playerId);
 		float rotationAngles = 90 * position.normalized.x;
@@ -24,5 +33,7 @@ public class MatchSetup : MonoBehaviour
 		fighterController.SetPlayerId(playerId);
 
 		fighterObj.SetActive(true);
+
+		return fighterObj;
 	}
 }
