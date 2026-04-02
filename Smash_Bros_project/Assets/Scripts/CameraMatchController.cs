@@ -26,7 +26,7 @@ public class CameraMatchController : MonoBehaviour
 	private void LateUpdate ()
 	{
 		Vector3 goalPosition = GetGoalPosition();
-		cam.transform.position = Vector3.Lerp(cam.transform.position, goalPosition, speed * Time.deltaTime);
+		cam.transform.position = Vector3.Lerp(cam.transform.position, goalPosition, speed * Time.unscaledDeltaTime);
 	}
 
 	private Vector3 GetGoalPosition()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class FighterLifeSystem : MonoBehaviour
@@ -16,6 +17,10 @@ public class FighterLifeSystem : MonoBehaviour
 	private float invincibilityCounter;
 
 	private bool hasInvincibility;
+
+	public event Action FighterDefeated;
+
+	public float CurrentLives => currentLives;
 
 	private void Update()
 	{
@@ -41,8 +46,6 @@ public class FighterLifeSystem : MonoBehaviour
 
 		if (currentLives > 0)
 		{
-			Debug.Log(currentLives);
-
 			transform.position = respawnPoints.GetPosition(fighterController.PlayerId);
 
 			damageReceiver.IsInvicible = true;
@@ -54,8 +57,8 @@ public class FighterLifeSystem : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("No lives left");
 			gameObject.SetActive(false);
+			FighterDefeated?.Invoke();
 		}
 	}
 

@@ -9,6 +9,8 @@ public class FighterDamageReceiver : MonoBehaviour
 
 	private float damageReceived;
 
+	public float DamageReceived => damageReceived;
+
 	public bool IsInvicible { get; set; }
 
 	private void Awake()

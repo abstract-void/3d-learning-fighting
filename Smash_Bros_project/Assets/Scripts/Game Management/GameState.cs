@@ -9,7 +9,7 @@ public class GameState : MonoBehaviour
 
 	[SerializeField] private string sceneName;
 
-	[SerializeField] private float totalTime;
+	[SerializeField] private float timeLimit;
 	[SerializeField] private int totalLives;
 
 	public static GameState Instance { get; private set; }
@@ -20,7 +20,7 @@ public class GameState : MonoBehaviour
 
 	public string SceneName => sceneName;
 
-	public float TotalTime => totalTime;
+	public float TimeLimit => timeLimit;
 
 	public int TotalLives => totalLives;
 
