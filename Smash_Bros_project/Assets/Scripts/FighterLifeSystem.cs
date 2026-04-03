@@ -11,8 +11,9 @@ public class FighterLifeSystem : MonoBehaviour
 
 	private PlayerFighterController fighterController;
 	private FighterDamageReceiver damageReceiver;
+	private Rigidbody rigidBody;
 
-	private float currentLives;
+	private int currentLives;
 
 	private float invincibilityCounter;
 
@@ -20,7 +21,7 @@ public class FighterLifeSystem : MonoBehaviour
 
 	public event Action FighterDefeated;
 
-	public float CurrentLives => currentLives;
+	public int CurrentLives => currentLives;
 
 	private void Update()
 	{
@@ -34,6 +35,7 @@ public class FighterLifeSystem : MonoBehaviour
 	{
 		fighterController = GetComponent<PlayerFighterController>();
 		damageReceiver = GetComponent<FighterDamageReceiver>();
+		rigidBody = GetComponent<Rigidbody>();
 
 		this.respawnPoints = respawnPoints;
 		
@@ -50,6 +52,7 @@ public class FighterLifeSystem : MonoBehaviour
 
 			damageReceiver.IsInvicible = true;
 			damageReceiver.ResetDamage();
+			rigidBody.linearVelocity = Vector2.zero;
 
 			invincibilityCounter = 0;
 

@@ -40,8 +40,6 @@ public class FighterDamageReceiver : MonoBehaviour
 			damageReceived += hitbox.Damage;
 
 			percentKnockback.ApplyKnockback(knockbackDirection, damageReceived * hitbox.Knockback);
-
-			Debug.Log(damageReceived);
 		}
 	}
 

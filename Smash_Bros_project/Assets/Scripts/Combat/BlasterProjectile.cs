@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(HitboxMelee))]
@@ -67,13 +68,22 @@ public class BlasterProjectile : MonoBehaviour
 
 	public void Disable()
 	{
-		gameObject.SetActive(false);
-		
 		direction = Vector2.zero;
 		lifespan = 0;
 		
 		rigidBody.linearVelocity = new Vector3();
 
+		StartCoroutine(Teleport());
+	}
+
+	IEnumerator Teleport()
+	{
+		yield return new WaitForSeconds(0.01f);
+
+		lifespan = 0;
+
 		transform.position = new Vector3(1000f, 1000f, 1000f);
+
+		gameObject.SetActive(false);
 	}
 }

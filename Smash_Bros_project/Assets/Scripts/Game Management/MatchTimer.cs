@@ -6,14 +6,15 @@ public class MatchTimer : MonoBehaviour
     // Tarea: temporizador (cuenta atrás o cronómetro) y evento “tiempo terminado”.
 	// Habla con: HUDController y MatchRulesResolver.
 	private float timeLimit;
-	private float currentTime;
 
 	public event Action TimeOver;
+
+	public float TimeLeft { get; private set; }
 
 	private void Awake()
 	{
 		timeLimit = GameState.Instance.TimeLimit;
-		currentTime = timeLimit;
+		TimeLeft = timeLimit;
 	}
 
 	private void Update()
@@ -23,9 +24,9 @@ public class MatchTimer : MonoBehaviour
 
 	private void RunTimer()
 	{
-		currentTime -= Time.deltaTime;
+		TimeLeft -= Time.deltaTime;
 
-		if (currentTime <= 0)
+		if (TimeLeft <= 0)
 		{
 			TimeOver?.Invoke();
 		}
