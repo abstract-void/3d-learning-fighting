@@ -49,6 +49,7 @@ public class FighterLifeSystem : MonoBehaviour
 		if (currentLives > 0)
 		{
 			transform.position = respawnPoints.GetPosition(fighterController.PlayerId);
+			transform.rotation = respawnPoints.GetRotation(transform.position);
 
 			damageReceiver.IsInvicible = true;
 			damageReceiver.ResetDamage();

@@ -19,4 +19,22 @@ public class RespawnPoints : MonoBehaviour
 
 		return Vector2.zero;
 	}
+
+	public Quaternion GetRotation(Vector3 position)
+	{
+		float rotationAngles;
+		
+		if (position.x < 0)
+		{
+			rotationAngles = 90;
+		}
+		else
+		{
+			rotationAngles = -90;
+		}
+
+		Quaternion rotation = Quaternion.Euler(0, rotationAngles, 0);
+
+		return rotation;
+	}
 }

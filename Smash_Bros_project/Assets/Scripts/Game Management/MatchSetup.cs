@@ -24,8 +24,7 @@ public class MatchSetup : MonoBehaviour
 	private GameObject InstantiateFighter(GameObject fighterPrefab, string playerId)
 	{
 		Vector3 position = respawnPoints.GetPosition(playerId);
-		float rotationAngles = -90 * position.normalized.x;
-		Quaternion rotation = Quaternion.Euler(0, rotationAngles, 0);
+		Quaternion rotation = respawnPoints.GetRotation(position);
 
 		GameObject fighterObj = Instantiate(fighterPrefab, position, rotation);
 		PlayerFighterController fighterController = fighterObj.GetComponent<PlayerFighterController>();

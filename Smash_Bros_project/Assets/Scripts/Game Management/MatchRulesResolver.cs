@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MatchRulesResolver : MonoBehaviour
@@ -8,6 +9,8 @@ public class MatchRulesResolver : MonoBehaviour
 	[SerializeField] private MatchTimer matchTimer;
 
 	private GameObject[] fighters;
+
+	public event Action<GameObject> MatchFinished;
 
 	private void Awake()
 	{
@@ -71,7 +74,7 @@ public class MatchRulesResolver : MonoBehaviour
 
 	private void EndMatch(GameObject winner)
 	{
-		Debug.Log(winner);
 		Time.timeScale = 0;
+		MatchFinished?.Invoke(winner);
 	}
 }
