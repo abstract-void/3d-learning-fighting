@@ -6,7 +6,8 @@ public class SingletonGuard : MonoBehaviour
 	// Habla con: todos los managers y destruye automáticamente cualquier instancia repetida al cargar escenas.
 	private static SingletonGuard Instance { get; set; }
 
-	public GameState GameState { get; private set; }
+	private GameState gameState;
+	private SceneLoader sceneLoader;
 
 	private void Awake()
 	{
@@ -23,8 +24,11 @@ public class SingletonGuard : MonoBehaviour
 		{
 			Instance = this;
 
-			GameState = GetComponent<GameState>();
-			GameState.Initialize();
+			gameState = GetComponent<GameState>();
+			gameState.Initialize();
+
+			sceneLoader = GetComponent<SceneLoader>();
+			sceneLoader.Initialize();
 		}
 	}
 }

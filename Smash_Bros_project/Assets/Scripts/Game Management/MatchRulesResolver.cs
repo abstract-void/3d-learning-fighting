@@ -23,6 +23,8 @@ public class MatchRulesResolver : MonoBehaviour
 		}
 
 		matchTimer.TimeOver += DecideWinner;
+		
+		Time.timeScale = 1;
 	}
 
 	private void CheckActiveFighters()

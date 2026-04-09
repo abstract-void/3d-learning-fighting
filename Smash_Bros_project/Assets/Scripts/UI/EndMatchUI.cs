@@ -22,12 +22,12 @@ public class EndMatchUI : MonoBehaviour
 
 	public void RestartMatch()
 	{
-		Debug.Log("Restart match");
+		SceneLoader.Instance.LoadMatchScene();
 	}
 
 	public void GoBack()
 	{
-		Debug.Log("Go back to the selection scenes");
+		SceneLoader.Instance.ReturnToPreviousScene();
 	}
 
 	private void DisplayEndMenu(GameObject winner)
