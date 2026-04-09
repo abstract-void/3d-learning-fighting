@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1312691043}
     m_Modifications:
+    - target: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+      propertyPath: m_Name
+      value: Power-Up Indicator 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2338867385419639887, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
       propertyPath: m_Name
       value: Fighter 2 Info
@@ -239,6 +243,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5937487271604479746, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
   m_PrefabInstance: {fileID: 397510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &397512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+  m_PrefabInstance: {fileID: 397510}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &20049611
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +301,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1312691043}
     m_Modifications:
+    - target: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+      propertyPath: m_Name
+      value: Power-Up Indicator 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2338867385419639887, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
       propertyPath: m_Name
       value: Fighter 3 Info
@@ -437,6 +450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &85898510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+  m_PrefabInstance: {fileID: 85898505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &150353075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2082,6 +2100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b3b118905f7be4c941dd304a5aa1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpIndicatorUI
+  powerUpIndicators:
+  - {fileID: 7335908832154728897}
+  - {fileID: 397512}
+  - {fileID: 85898510}
+  - {fileID: 1499242060}
+  matchSetup: {fileID: 20049612}
 --- !u!114 &1312691045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,6 +2209,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1312691043}
     m_Modifications:
+    - target: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+      propertyPath: m_Name
+      value: Power-Up Indicator 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2338867385419639887, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
       propertyPath: m_Name
       value: Fighter 4 Info
@@ -2330,6 +2358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1499242060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+  m_PrefabInstance: {fileID: 1499242055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1511915268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3124,6 +3157,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1312691043}
     m_Modifications:
+    - target: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+      propertyPath: m_Name
+      value: Power-Up Indicator 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2338867385419639887, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
       propertyPath: m_Name
       value: Fighter 1 Info
@@ -3225,6 +3262,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+--- !u!1 &7335908832154728897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 798541179018328880, guid: 547807fe73840614f953f35d0b4c8c3e, type: 3}
+  m_PrefabInstance: {fileID: 7335908832154728896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

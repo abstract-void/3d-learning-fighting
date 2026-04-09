@@ -11,7 +11,7 @@ public class PowerUpController : MonoBehaviour
 	private float powerUpLength;
 	private float counter;
 
-	private bool powerUpActive;
+	public bool PowerUpActive { get; private set; }
 
 	private void Awake()
 	{
@@ -20,7 +20,7 @@ public class PowerUpController : MonoBehaviour
 
 	private void Update()
 	{
-		if (powerUpActive == true)
+		if (PowerUpActive == true)
 		{
 			RunTimer();
 		}
@@ -33,7 +33,6 @@ public class PowerUpController : MonoBehaviour
 		if (counter > powerUpLength)
 		{
 			RemovePowerUpEffect(powerUpType);
-			powerUpActive = false;
 		}
 	}
 
@@ -54,7 +53,7 @@ public class PowerUpController : MonoBehaviour
 
 		counter = 0;
 
-		powerUpActive = true;
+		PowerUpActive = true;
 	}
 
 	private void RemovePowerUpEffect(string type)
@@ -63,5 +62,7 @@ public class PowerUpController : MonoBehaviour
 		{
 			damageReceiver.IsInvicible = false;
 		}
+
+		PowerUpActive = false;
 	}
 }
