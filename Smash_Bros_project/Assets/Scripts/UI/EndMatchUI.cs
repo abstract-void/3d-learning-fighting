@@ -27,7 +27,7 @@ public class EndMatchUI : MonoBehaviour
 
 	public void GoBack()
 	{
-		SceneLoader.Instance.ReturnToPreviousScene();
+		SceneLoader.Instance.LoadMainMenuScene();
 	}
 
 	private void DisplayEndMenu(GameObject winner)

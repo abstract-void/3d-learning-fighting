@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8848017815744114806, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: jumpImpulse
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 19429867471451519, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4567964930791041659, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: m_Name
-      value: P2 Variant
+      value: CharFink Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4657725552351770582, guid: 25a91fbb9572e3d479e6d42250373690, type: 3}
       propertyPath: moveSpeed

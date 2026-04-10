@@ -47,13 +47,7 @@ public class SceneLoader : MonoBehaviour
 
 	public void ReturnToPreviousScene()
 	{
-		if (SceneIsLoaded(matchScene))
-		{
-			LoadMainMenuScene();
-			LoadCharacterSelectionScene();
-			LoadStageSelectionScene();
-		}
-		else if (SceneIsLoaded(stageSelectionScene))
+		if (SceneIsLoaded(stageSelectionScene))
 		{
 			StartCoroutine(UnloadScene(stageSelectionScene));
 		}
@@ -69,7 +63,7 @@ public class SceneLoader : MonoBehaviour
 		Application.Quit();
 	}
 
-	private bool SceneIsLoaded(string sceneName)
+	public bool SceneIsLoaded(string sceneName)
 	{
 		for (int i = 0; i < SceneManager.sceneCount; i++)
 		{

@@ -58,11 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84f5b87168a7074d8da37dfb01fba9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameState
-  p1Prefab: {fileID: 6314383361565576448, guid: 1b5bafcfa9db73c45afe4142fa021d6b, type: 3}
-  p2Prefab: {fileID: 6133196864828157648, guid: 79b2444eecd97e14fbb32ae573a69a7d, type: 3}
-  sceneName: GameScene
-  timeLimit: 180
-  totalLives: 3
+  defaultTime: 3
+  defaultLives: 3
 --- !u!114 &3527585936067010907
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5adc0690d8cc4443a6ed34b52a3d4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BombProjectile
-  moveSpeed: 20
+  moveSpeed: 30
   longevity: 2
-  gravity: -5
+  gravity: -45
   angle: 90
 --- !u!114 &7880329397724004440
 MonoBehaviour:
